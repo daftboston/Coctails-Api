@@ -23,7 +23,7 @@ function App() {
     
   const searchCoctail = (e) => {
     e.preventDefault()
-    console.log(e.target[0].value);
+   
     setName (e.target[0].value)
   }
 
@@ -31,9 +31,15 @@ function App() {
 const getData = () => {
   axios
   .get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${name}`)
+
   .then (resp => {console.log(resp.data.drinks)
-  setCoctailData(resp.data.drinks)})
-  .catch(error=> console.error(error))
+  setCoctailData(resp.data.drinks)
+  })
+
+  .catch(error=> {
+    console.error(error)
+   setCoctailData([])
+  })
 }
 
 
@@ -46,8 +52,11 @@ const getData = () => {
           </form>
       <div className='container'>
         
-          {
-             coctailData.map((coctail, index)=> <CoctailCard key = {`coctail-${index}`} data={coctail}/>)
+        
+          {coctailData.length !== 0 ? (
+             coctailData.map
+             ((coctail, index)=> (<CoctailCard key = {`coctail-${index}`} data={coctail}/>)
+             ) ) : ( <h2>no hubo resultado</h2> )
            }
 
       </div>

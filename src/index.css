@@ -28,7 +28,7 @@ body {
 }
 
 article {
-  border: 2px solid black;
+  border: 4px solid rgb(166, 248, 207);
   width: 300px;
   border-radius: 0.5rem;
   text-align: center;
@@ -36,17 +36,18 @@ article {
 }
 
 .photo{
-  border: 2px solid black;
+  border: 2px ;
   width: 300px;
   border-radius: 1rem;
   text-align: center;
   margin: 0 auto;
 }
 
-h3 {
-  font-size: 1.2em;
-  line-height: 1.1;
-  color: #747bff;
+
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 
@@ -57,13 +58,15 @@ button:focus-visible {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: #473321;
+    background-color: #b8dc35;
   }
   a:hover {
     color: #747bff;
   }
   button {
-    background-color: #f9f9f9;
+    background-color: #f8f5ba;
   }
 }
+
+

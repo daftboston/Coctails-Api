@@ -4,6 +4,7 @@ import './App.css'
 import axios from 'axios'
 import CoctailCard from './components/CoctailCard'
 
+
 function App() {
   
    const[coctailData, setCoctailData] = useState([])
@@ -13,17 +14,12 @@ function App() {
 
 
    //Con el useEffect se consume la api de axios
-   useEffect(() => {
-    /* axios
-    .metodo("url")
-    .then(respuesta=> console.log(respuesta))  then en caso de que la promesa se cumpla
-    .catch.(erro=>console.error)   catch en caso de que la promesa no se cumpla */
+   useEffect(() => { 
    getData()
    },[name])
     
   const searchCoctail = (e) => {
-    e.preventDefault()
-   
+    e.preventDefault()   
     setName (e.target[0].value)
   }
 
@@ -46,25 +42,26 @@ const getData = () => {
   return (
     <div className="App">
       
-          <form onSubmit={(e)=> searchCoctail(e)}>
-             <input type="text" placeholder='buscar por nombre' />
-             <button type='submit'></button>
+          <form  onSubmit={(e)=> searchCoctail(e)}>
+             <input type="text" placeholder='Search by name' />
+             <button  type='submit'><i className='bx bx-drink'></i></button>
+             
           </form>
+
       <div className='container'>
         
         
-          {coctailData.length !== 0 ? (
-             coctailData.map
-             ((coctail, index)=> (<CoctailCard key = {`coctail-${index}`} data={coctail}/>)
-             ) ) : ( <h2>no hubo resultado</h2> )
+          {coctailData !== null
+          ? 
+             coctailData.map((coctail, index)=> (<CoctailCard key = {`coctail-${index}`} data={coctail}/>)
+             )
+             : 
+             <h2>No hay resultados  <i className='bx bx-sad'></i></h2>
            }
 
       </div>
     
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-
-      </p>
+      
     </div>
   )
 }

@@ -3,23 +3,63 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  
 }
+
 
 .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
 }
-.card :hover {
-  filter: drop-shadow(0 0 0.5em #646cffaa);}
+form :hover {
+  filter: drop-shadow(0 0 2em #09facaaa);}
 
-
-
-
-
-
-
-.App {
- display:flexbox;
-
+form {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
 }
+
+
+button {
+width: 20px;
+height: 20px;
+
+display: flex;
+justify-content: center;
+align-items: center;
+  }
+
+h2{
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(65, 41, 64);
+    font-size: 1.5em;
+    line-height: 1.1;
+  }
+
+h3{
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(65, 41, 64);
+    font-size: 1.2em;
+    line-height: 1.1;
+  }
+
+  h4{
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(231, 204, 230);
+    
+    
+    line-height: 1.1;
+  }
+.bx bx-sad > {
+  font-size: 50px;
+  
+ }
+
+  
+
+
+
+
+
